@@ -1,3 +1,3 @@
 # react-rolodex
 
-A simple, intro React application.
+A simple, intro React application..
