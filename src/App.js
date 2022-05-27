@@ -3,18 +3,14 @@
 import { Component } from 'react';
 import './App.css';
 
+const dataURL = 'https://jsonplaceholder.typicode.com/users';
+
 class App extends Component {
 	constructor() {
 		super();
 
 		this.state = {
-			monsters: [
-				{ name: 'homer', id: 1 },
-				{ name: 'marge', id: 12 },
-				{ name: 'bart', id: 14 },
-				{ name: 'lisa', id: 15 },
-				{ name: 'maggie', id: 16 },
-			],
+			monsters: [],
 		};
 	}
 
