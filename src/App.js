@@ -3,8 +3,6 @@
 import { Component } from 'react';
 import './App.css';
 
-const dataURL = 'https://jsonplaceholder.typicode.com/users';
-
 class App extends Component {
 	constructor() {
 		super();
@@ -12,6 +10,14 @@ class App extends Component {
 		this.state = {
 			monsters: [],
 		};
+	}
+
+	async componentDidMount() {
+		const res = await fetch('https://jsonplaceholder.typicode.com/users');
+		const data = await res.json();
+		this.setState(() => {
+			return { monsters: data };
+		});
 	}
 
 	render() {
