@@ -12,12 +12,9 @@ class App extends Component {
 			monsters: [],
 			searchField: '',
 		};
-
-		console.log('constructor');
 	}
 
 	async componentDidMount() {
-		console.log('componentDidMount');
 		const res = await fetch('https://jsonplaceholder.typicode.com/users');
 		const data = await res.json();
 		this.setState(() => {
@@ -34,8 +31,6 @@ class App extends Component {
 	};
 
 	render() {
-		console.log('render');
-
 		const { monsters, searchField } = this.state;
 		const { onSearchChange } = this;
 
@@ -51,10 +46,7 @@ class App extends Component {
 					placeholder="search monsters"
 					onChange={onSearchChange}
 				/>
-				{/* {filteredMonsters.map((monster) => {
-					return <h1 key={monster.id}>{monster.name}</h1>;
-				})} */}
-				<CardList />
+				<CardList monsters={filteredMonsters} />
 			</div>
 		);
 	}
